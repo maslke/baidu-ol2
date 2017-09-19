@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>baidu</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="openlayersv2/theme/default/style.css" />
+    <script type="text/javascript" src="openlayersv2/OpenLayers.js"></script>
+    <script type="text/javascript" src="BaiduLayer.js"></script>
+    <style type="text/css">
+         html, body {
+            font-family: proxima-nova,"Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 12px;
+            width: 100%;
+            min-width: 100%;
+            height: 100%;
+            color: #646464;
+            background-color: #f6f6f6;
+            overflow-x: hidden;
+        }
+        * {
+            box-sizing: border-box;
+            outline: none;
+            padding:0;
+            margin:0;
+        }
+
+        #mapDiv {
+            width:100%;
+            height:100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mapDiv" style="width:100%;height:100%"></div>
+    <script type="text/javascript">
+        var map = new OpenLayers.Map('mapDiv', {
+            projection: 'EPSG:3857',
+            zoom: 7
+        });
+        map.addLayer(new OpenLayers.Layer.BaiduLayer('street', '', {
+            layerType: 'street',
+            isBaseLayer: true
+        }));
+        map.setCenter([13396744, 3433813]);
+    </script>
+</body>
+
+</html>
