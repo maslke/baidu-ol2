@@ -14,3 +14,7 @@ var layer = new OpenLayers.Layer.BaiduLayer('street', '', {
 });
 
 map.addLayer(layer);
+
+
+
+在线演示地址为：http://gisfeng.com/baidu-ol2/index.html
